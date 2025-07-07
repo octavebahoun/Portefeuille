@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Octave - Contact</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #22c55e;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #222;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #22c55e;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .about-me p {
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 15px;
+    }
+    .project-info h3 {
+      margin-bottom: 10px;
+      color: #22c55e;
+    }
+    .project-info p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    form {
+      max-width: 600px;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #222;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #22c55e;
+      outline: none;
+    }
+    button {
+      background: #22c55e;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #16a34a;
+    }
+    .error {
+      color: #e03131;
+      font-size: 0.9rem;
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #eee;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+      form {
+        padding: 20px;
+      }
+    }
+  /* Bouton Dark Mode */
+#darkToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 15px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+#darkToggle:hover {
+  transform: scale(1.2);
+}
+
+/* Dark mode activé */
+body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+body.dark-mode header {
+  background: #000;
+}
+body.dark-mode nav a {
+  color: #eee;
+}
+body.dark-mode nav a:hover {
+  color: #22c55e;
+}
+body.dark-mode .project-card {
+  background: #1e1e1e;
+  color: #eee;
+}
+body.dark-mode footer {
+  background: #000;
+  color: #bbb;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #222;
+  color: white;
+  border-color: #333;
+}
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+  border-color: #22c55e;
+}
+body.dark-mode form {
+  background: #1e1e1e;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+  <h1>Octave BAHOUN</h1>
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+    <button id="darkToggle" title="Basculer Dark Mode">🌙</button>
+  </nav>
+</header>
+
+  <main class="container">
+    <section id="about" class="about-me">
+      <h2>À propos de moi</h2>
+      <p>
+        Je suis étudiant en génie informatique et passionné par le développement web, la cybersécurité, et l’innovation technologique. J'aime créer des projets modernes, fonctionnels et esthétiques.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Mes Projets</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img class="project-img" src="https://source.unsplash.com/400x300/?coding,computer" alt="Projet 1" />
+          <div class="project-info">
+            <a href="Cv.html"> <h3>Site Portfolio</h3></a>
+            <p>Un portfolio moderne responsive en HTML/CSS/JS.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://source.unsplash.com/400x300/?app,mobile" alt="Projet 2" />
+          <div class="project-info">
+            <h3>Application Mobile</h3>
+            <p>Une application Android intuitive et rapide.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://source.unsplash.com/400x300/?security,hacker" alt="Projet 3" />
+          <div class="project-info">
+            <h3>Projet Cybersécurité</h3>
+            <p>Outils de détection et analyse de vulnérabilités.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://source.unsplash.com/400x300/?web,developer" alt="Projet 4" />
+          <div class="project-info">
+            <h3>Développeur Web</h3>
+            <p>Création de sites web modernes et performants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contactez-moi</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" placeholder="Ton nom complet" required />
+        <div id="nameError" class="error"></div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required />
+        <div id="emailError" class="error"></div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Écris ton message ici..." required></textarea>
+        <div id="messageError" class="error"></div>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Octave BAHOUN — Tous droits réservés.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+
+    function validateEmail(email) {
+      // simple regex email validation
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let valid = true;
+
+      // Reset errors
+      nameError.textContent = '';
+      emailError.textContent = '';
+      messageError.textContent = '';
+
+      // Validate name
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Le nom est requis.';
+        valid = false;
+      }
+
+      // Validate email
+      if (emailInput.value.trim() === '') {
+        emailError.textContent = 'L\'email est requis.';
+        valid = false;
+      } else if (!validateEmail(emailInput.value.trim())) {
+        emailError.textContent = 'L\'email n\'est pas valide.';
+        valid = false;
+      }
+
+      // Validate message
+      if (messageInput.value.trim() === '') {
+        messageError.textContent = 'Le message est requis.';
+        valid = false;
+      }
+
+      if (valid) {
+        alert('Merci pour votre message, je vous répondrai rapidement !');
+        form.reset();
+      }
+    });
+  const toggleButton = document.getElementById("darkToggle");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  // Change l'icône aussi
+  toggleButton.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+});
+  </script>
+
+</body>
+</html>
