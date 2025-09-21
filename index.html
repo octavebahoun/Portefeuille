@@ -1,353 +1,764 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio Octave - Contact</title>
+  <title>Portfolio — BAHOUN-HOUTOUKPE Octave</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Reset & base */
+    :root {
+      --bg: #0f1724;
+      /* bleu nuit */
+      --card: #0b1220;
+      --muted: #9aa7bf;
+      --accent: #7c3aed;
+      /* violet */
+      --glass: rgba(255, 255, 255, 0.04);
+      --radius: 14px;
+      --maxw: 1100px;
+      --glass-2: rgba(255, 255, 255, 0.03);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+
+    /* Mode clair */
+    .light {
+      --bg: #f6f8fb;
+      --card: #fff;
+      --muted: #5a6473;
+      --accent: #7c3aed;
+      --glass: rgba(0, 0, 0, 0.04);
+      --glass-2: rgba(0, 0, 0, 0.03);
+      color-scheme: light;
     }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    .light body {
+      background: linear-gradient(180deg, var(--bg), #e6eaff 120%);
+      color: #1a2233;
     }
-    header h1 {
-      font-weight: 700;
-      font-size: 2.2rem;
+
+    .light nav a {
+      color: var(--muted);
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #22c55e;
-    }
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h2 {
-      font-size: 1.8rem;
+
+    .light nav a:hover {
       color: #222;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #22c55e;
-      display: inline-block;
-      padding-bottom: 5px;
+      background: rgba(0, 0, 0, 0.04);
     }
-    .about-me p {
-      font-size: 1.1rem;
-      max-width: 700px;
+
+    .light .card {
+      background: var(--card);
+      box-shadow: 0 2px 12px rgba(124, 58, 237, 0.04);
     }
+
+    .light .pill {
+      background: var(--glass);
+      color: var(--muted);
+    }
+
+    .light .tag {
+      background: rgba(0, 0, 0, 0.03);
+      color: var(--muted);
+    }
+
+    .light .btn {
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      color: #fff;
+    }
+
+    .light .btn.ghost {
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      color: var(--muted);
+    }
+
+    .light footer {
+      color: var(--muted);
+    }
+
+    .light input,
+    .light textarea {
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      color: #1a2233;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #061026 120%);
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .light body {
+      background: linear-gradient(180deg, var(--bg), #e6eaff 120%);
+      color: #1a2233;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw)
+    }
+
+    /* Top nav */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px
+    }
+
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #16325c, #1f2b4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.03)
+    }
+
+    .light nav a {
+      color: var(--muted);
+    }
+
+    .light nav a:hover {
+      color: #222;
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    main {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7)
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .avatar {
+      background: linear-gradient(180deg, #0b1220, #0f1b2e);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    }
+
+    .photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #112a46, #0f1724);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px
+    }
+
+    .meta {
+      width: 100%;
+      text-align: center
+    }
+
+    .meta h4 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--accent)
+    }
+
+    .meta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .intro h1 {
+      font-size: 30px;
+      margin: 0 0 8px 0
+    }
+
+    .intro p {
+      margin: 0 0 18px 0;
+      color: var(--muted)
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent), #5b21b6);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.18)
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted)
+    }
+
+    .light .btn {
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      color: #fff;
+    }
+
+    .light .btn.ghost {
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 26px
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px
+    }
+
+    .light .card {
+      background: var(--card);
+      box-shadow: 0 2px 12px rgba(124, 58, 237, 0.04);
+    }
+
+    /* About & skills */
+    .about {
+      display: flex;
+      gap: 20px;
+      align-items: center
+    }
+
+    .about .bio {
+      flex: 1
+    }
+
+    .interests {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .pill {
+      background: var(--glass);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .light .pill {
+      background: var(--glass);
+      color: var(--muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 12px
+    }
+
+    .skill {
+      background: var(--glass-2);
+      padding: 12px;
+      border-radius: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .skill svg {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0
+    }
+
+    .skill strong {
+      display: block
+    }
+
+    .skill span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 12px
     }
-    .project-card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-    .project-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .project-info {
-      padding: 15px;
-    }
-    .project-info h3 {
-      margin-bottom: 10px;
-      color: #22c55e;
-    }
-    .project-info p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    form {
-      max-width: 600px;
-      background: #fff;
-      padding: 25px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #222;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 10px 15px;
-      margin-bottom: 20px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-size: 1rem;
-      resize: vertical;
-      transition: border-color 0.3s;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      border-color: #22c55e;
-      outline: none;
-    }
-    button {
-      background: #22c55e;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #16a34a;
-    }
-    .error {
-      color: #e03131;
-      font-size: 0.9rem;
-      margin-top: -15px;
-      margin-bottom: 15px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #eee;
-      font-size: 0.9rem;
-      margin-top: 60px;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-      }
-      form {
-        padding: 20px;
-      }
-    }
-  /* Bouton Dark Mode */
-#darkToggle {
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  margin-left: 15px;
-  color: #fff;
-  transition: transform 0.3s;
-}
-#darkToggle:hover {
-  transform: scale(1.2);
-}
 
-/* Dark mode activé */
-body.dark-mode {
-  background: #111;
-  color: #eee;
-}
-body.dark-mode header {
-  background: #000;
-}
-body.dark-mode nav a {
-  color: #eee;
-}
-body.dark-mode nav a:hover {
-  color: #22c55e;
-}
-body.dark-mode .project-card {
-  background: #1e1e1e;
-  color: #eee;
-}
-body.dark-mode footer {
-  background: #000;
-  color: #bbb;
-}
-body.dark-mode input,
-body.dark-mode textarea {
-  background: #222;
-  color: white;
-  border-color: #333;
-}
-body.dark-mode input:focus,
-body.dark-mode textarea:focus {
-  border-color: #22c55e;
-}
-body.dark-mode form {
-  background: #1e1e1e;
-}
+    .proj {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease
+    }
+
+    .proj:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6)
+    }
+
+    .proj .preview {
+      height: 160px;
+      background: linear-gradient(135deg, #071330, #11243a);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .proj .info {
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent)
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 8px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 12px
+    }
+
+    .light .tag {
+      background: rgba(0, 0, 0, 0.03);
+      color: var(--muted);
+    }
+
+    /* Future */
+    .future-list {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .future-item {
+      background: linear-gradient(90deg, rgba(124, 58, 237, 0.12), rgba(41, 25, 69, 0.06));
+      padding: 12px;
+      border-radius: 12px;
+      min-width: 180px
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 18px
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    input,
+    textarea {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 10px;
+      color: inherit
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-direction: column
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      text-decoration: none;
+      color: var(--muted)
+    }
+
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center
+    }
+
+    .light footer {
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width:880px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px
+      }
+    }
   </style>
 </head>
+
 <body>
-
-  <header>
-  <h1>Octave BAHOUN</h1>
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
-    <button id="darkToggle" title="Basculer Dark Mode">🌙</button>
-  </nav>
-</header>
-
-  <main class="container">
-    <section id="about" class="about-me">
-      <h2>À propos de moi</h2>
-      <p>
-        Je suis étudiant en génie informatique et passionné par le développement web, la cybersécurité, et l’innovation technologique. J'aime créer des projets modernes, fonctionnels et esthétiques.
-      </p>
-    </section>
-
-    <section id="projects">
-      <h2>Mes Projets</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-info">
-            <a href="Cv.html"> <h3>Site Portfolio</h3></a>
-            <p>Un portfolio moderne responsive en HTML/CSS/JS.</p>
-          </div>
-        </div>
-        <div class="project-card ">
-          <div class="project-info">
-            <h3>Application Mobile</h3>
-            <p>Une application Android intuitive et rapide.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-info">
-            <h3>Projet Cybersécurité</h3>
-            <p>Outils de détection et analyse de vulnérabilités.</p>
-          </div>
-        </div>
-        <div class="project-card">
-             <div class="project-info">
-            <h3>Développeur Web</h3>
-            <p>Création de sites web modernes et performants.</p>
-          </div>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">OB</div>
+        <div>
+          <div style="font-weight:700">BAHOUN-HOUTOUKPE Octave</div>
+          <div style="font-size:12px;color:var(--muted)">Étudiant — Génie Électrique & Informatique</div>
         </div>
       </div>
-    </section>
+      <nav>
+        <a href="#projets">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">À propos</a>
+      </nav>
+      <button id="theme-toggle" class="btn ghost" style="margin-left:18px" aria-label="Changer de thème">🌙</button>
+    </header>
 
-    <section id="contact">
-      <h2>Contactez-moi</h2>
-      <form id="contactForm" novalidate>
-        <label for="name">Nom complet</label>
-        <input type="text" id="name" name="name" placeholder="Ton nom complet" required />
-        <div id="nameError" class="error"></div>
+    <main>
+      <section class="hero card">
+        <div class="avatar">
+          <div class="photo">OB</div>
+          <div class="meta">
+            <h4>Étudiant & Développeur</h4>
+            <p>Dév Web • Mobile • IA • Télécoms</p>
+          </div>
+          <div style="width:100%" class="pill">En recherche d'opportunités & collaborations</div>
+        </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required />
-        <div id="emailError" class="error"></div>
+        <div class="intro">
+          <h1>Salut — je suis Octave<br /><span style="color:var(--accent)">Développeur Web & Mobile</span></h1>
+          <p>🎓 Étudiant en Génie Électrique et Informatique à l’INSTI de Lokossa, je me spécialise en Informatique et
+            Télécommunications. Passionné par la technologie, je développe des compétences à l’intersection de plusieurs
+            domaines :
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Écris ton message ici..." required></textarea>
-        <div id="messageError" class="error"></div>
+            💻 Développement logiciel & applications web/mobiles (PHP, MySQL, JavaScript, Laravel, Vue.js).
 
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
+            🤖 Robotique & Systèmes embarqués (Arduino, ROS – Robot Operating System).
 
-  <footer>
-    &copy; 2025 Octave BAHOUN — Tous droits réservés.
-  </footer>
+            📊 Data Science & IA appliquée : analyse de performances académiques, recommandations intelligentes,
+            chabots.</p>
+          <div class="cta">
+            <button class="btn" onclick="scrollToSection('projets')">Voir mes projets</button>
+            <button class="btn ghost" onclick="scrollToSection('contact')">Me contacter</button>
+          </div>
+
+          <div style="margin-top:18px" class="card">
+            <strong>Résumé rapide</strong>
+            <div style="color:var(--muted);margin-top:8px">PHP · Laravel · Vue.js · React · Flutter · Firebase · MySQL ·
+              Python · Git</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="card about">
+        <div class="bio">
+          <h3>À propos</h3>
+          <p style="color:var(--muted)">Étudiant à l'INSTI (Lokossa). Passionné par l'IA appliquée au campus, les
+            applications mobiles et le dev web. Fan d'anime et de musique metal — j'apporte créativité et persévérance à
+            mes projets.</p>
+
+          <div style="margin-top:12px">
+            <div style="font-size:13px;color:var(--muted)">Centres d'intérêt</div>
+            <div class="interests" style="margin-top:8px">
+              <div class="pill">Anime</div>
+              <div class="pill">Musique metal</div>
+              <div class="pill">Dance</div>
+              <div class="pill">IA & Data</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 id="skills">Compétences</h3>
+          <div class="skills-grid">
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" />
+              </svg>
+              <div><strong>PHP & Laravel</strong><span>Backend & APIs</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" />
+              </svg>
+              <div><strong>JavaScript</strong><span>Vue / React / Node</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" />
+              </svg>
+              <div><strong>Flutter</strong><span>Apps multiplateformes</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" />
+              </svg>
+              <div><strong>Firebase & PocketBase</strong><span>Auth & BDD temps réel</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2v20" stroke="currentColor" />
+              </svg>
+              <div><strong>MySQL</strong><span>Conception BD</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" />
+              </svg>
+              <div><strong>Python</strong><span>Data & scripts</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7l9 6 9-6" stroke="currentColor" />
+              </svg>
+              <div><strong>Git & GitHub</strong><span>Versioning</span></div>
+            </div>
+            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12h20" stroke="currentColor" />
+              </svg>
+              <div><strong>Telecoms</strong><span>Réseaux & systèmes</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projets">
+        <h3 style="margin-top:18px">Projets</h3>
+        <div class="projects-grid">
+          <article class="proj card"
+            onclick="window.open('https://trading-2cf04.web.app/', '_blank')">
+            <div class="preview">
+              <div style="font-weight:700">Trading formation App</div>
+            </div>
+            <div class="info">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Trading formation
+                  App</strong><span style="color:var(--muted);font-size:13px">Fullstack</span></div>
+              <p style="color:var(--muted);font-size:13px;margin:8px 0">
+                Un site interractive intuitifs de formations payantes en trading.
+              </p>
+              <div class="tags">
+                <div class="tag">Firebase</div>
+                <div class="tag">Vue.js</div>
+                <div class="tag">API</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj card"
+            onclick="window.open('https://app-quiz-758e0.web.app/', '_blank')">
+            <div class="preview">
+              <div style="font-weight:700">Quiz App</div>
+            </div>
+            <div class="info">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Quiz App</strong><span
+                  style="color:var(--muted);font-size:13px">Vue.js</span></div>
+              <p style="color:var(--muted);font-size:13px;margin:8px 0">Application de quiz responsive, modes chrono et
+                score dynamique.</p>
+              <div class="tags">
+                <div class="tag">Vue.js</div>
+                <div class="tag">Firebase</div>
+                <div class="tag">Tailwind</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj card"
+            onclick="window.open('')">
+            <div class="preview">
+              <div style="font-weight:700">Pixel Verse</div>
+            </div>
+            <div class="info">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Pixel
+                  Verse</strong><span style="color:var(--muted);font-size:13px">Vue / Laravel</span></div>
+              <p style="color:var(--muted);font-size:13px;margin:8px 0">Une galerie de fond d'ecran intelligente en ligne .</p>
+              <div class="tags">
+                <div class="tag">Vue</div>
+                <div class="tag">Laravel</div>
+                <div class="tag">Auth</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Futurs projets</h3>
+        <div class="future-list" style="margin-top:8px">
+          <div class="future-item"><strong>Journal Anime</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Écrire et partager tes ressentis sur les
+                épisodes d'anime.</div>
+          </div>
+          <div class="future-item"><strong>IA de recommandations</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Système de suggestions de cours & groupes
+              d'étude.</div>
+          </div>
+          <div class="future-item"><strong>Optimiseur d'emploi du temps</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Prédiction d'affluence & notifications
+              intelligentes.</div>
+          </div>
+          <div class="future-item"><strong>Market place campus</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Matching étudiants-jobs & colocations.</div>
+          </div>
+          <div class="future-item"><strong>Chatbot IA</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Assistant virtuel pour infos campus & FAQ.</div>
+          <div class="future-item"><strong>Smart Campus App</strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Système académique intelligent — notes, emploi
+                du temps et IA.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card" style="margin-top:18px">
+        <h3>Contact</h3>
+        <div class="contact-grid" style="margin-top:10px">
+          <form onsubmit="submitContact(event)">
+            <input required name="name" placeholder="Ton nom" />
+            <input required name="email" placeholder="Ton email" />
+            <input name="subject" placeholder="Sujet" />
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <div style="display:flex;gap:10px">
+              <button class="btn" type="submit">Envoyer</button>
+              <button type="button" class="btn ghost" onclick="clearForm(this)">Effacer</button>
+            </div>
+          </form>
+          Envoyer un mail 
+
+          <div class="socials">
+            <a href="https://github.com/octavebahoun">🔗 GitHub</a>
+            <a href="https://www.linkedin.com/in/octave-bahoun-b9114b337/">🔗 LinkedIn</a>
+            <a href="mailto:octavebahoun@gmail.com">✉️ Email</a>
+            <a href="#">📱 WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Octave BAHOUN — Portfolio interactif</div>
+      </footer>
+    </main>
+  </div>
 
   <script>
-    const form = document.getElementById('contactForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const messageError = document.getElementById('messageError');
+    // Gestion du thème clair/sombre
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('theme-toggle');
+    function setTheme(mode) {
+      if (mode === 'light') {
+        root.classList.add('light');
+        themeBtn.textContent = '☀️';
+      } else {
+        root.classList.remove('light');
+        themeBtn.textContent = '🌙';
+      }
+      localStorage.setItem('theme', mode);
+    }
+    // Initialisation
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'light') setTheme('light');
+    else setTheme('dark');
+    themeBtn.onclick = () => {
+      setTheme(root.classList.contains('light') ? 'dark' : 'light');
+    };
 
-    function validateEmail(email) {
-      // simple regex email validation
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    function openProject(title, desc) {
+      // simple modal style alert — remplacer par modal réel si besoin
+      alert(title + "\n\n" + desc);
+    }
 
-      let valid = true;
+    function submitContact(e) {
+      e.preventDefault();
+      const f = e.target;
+      // demo only — ici on peut connecter à un service (formspree, firebase, api)
+      alert('Merci ' + (f.name.value || 'ami') + '! Ton message a été reçu (simulation).');
+      f.reset();
+    }
 
-      // Reset errors
-      nameError.textContent = '';
-      emailError.textContent = '';
-      messageError.textContent = '';
-
-      // Validate name
-      if (nameInput.value.trim() === '') {
-        nameError.textContent = 'Le nom est requis.';
-        valid = false;
-      }
-
-      // Validate email
-      if (emailInput.value.trim() === '') {
-        emailError.textContent = 'L\'email est requis.';
-        valid = false;
-      } else if (!validateEmail(emailInput.value.trim())) {
-        emailError.textContent = 'L\'email n\'est pas valide.';
-        valid = false;
-      }
-
-      // Validate message
-      if (messageInput.value.trim() === '') {
-        messageError.textContent = 'Le message est requis.';
-        valid = false;
-      }
-
-      if (valid) {
-        alert('Merci pour votre message, je vous répondrai rapidement !');
-        form.reset();
-      }
-    });
-  const toggleButton = document.getElementById("darkToggle");
-
-toggleButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  // Change l'icône aussi
-  toggleButton.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-});
+    function clearForm(btn) {
+      const f = btn.closest('form'); if (f) f.reset();
+    }
   </script>
-
 </body>
+
 </html>
