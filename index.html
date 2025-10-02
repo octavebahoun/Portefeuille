@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio de BAHOUN-HOUTOUKPE Octave - Étudiant en Génie Électrique et Informatique spécialisé en développement web, mobile et IA">
+  <meta name="theme-color" content="#7c3aed">
   <title>Portfolio — BAHOUN-HOUTOUKPE Octave</title>
   <style>
     /* Reset & base */
@@ -150,6 +151,7 @@
     html,
     body {
       height: 100%;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -161,6 +163,7 @@
       padding: 40px 20px;
       display: flex;
       justify-content: center;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .wrap {
@@ -168,12 +171,39 @@
       max-width: var(--maxw);
     }
 
-    /* Top nav */
+    /* Navigation fixe améliorée */
     header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: var(--maxw);
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 28px;
+      background: rgba(11, 18, 32, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 12px 20px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .light header {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    header.scrolled {
+      top: 10px;
+      background: rgba(11, 18, 32, 0.98);
+    }
+
+    .light header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
     }
 
     .brand {
@@ -194,24 +224,94 @@
       font-size: 18px;
       color: var(--accent);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
     }
 
     nav {
       display: flex;
-      gap: 12px;
+      gap: 8px;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
-      padding: 8px 12px;
+      padding: 8px 16px;
       border-radius: 10px;
       transition: all 0.2s ease;
+      font-weight: 500;
+      font-size: 14px;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #fff;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(124, 58, 237, 0.15);
+    }
+
+    .light nav a:hover,
+    .light nav a.active {
+      color: var(--accent);
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    /* Toggle theme amélioré */
+    .theme-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-toggle {
+      position: relative;
+      width: 60px;
+      height: 30px;
+    }
+
+    .toggle-checkbox {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    .toggle-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 30px;
+      background: #374151;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      padding: 0 5px;
+    }
+
+    .light .toggle-label {
+      background: #d1d5db;
+    }
+
+    .toggle-ball {
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transform: translateX(0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .toggle-checkbox:checked + .toggle-label .toggle-ball {
+      transform: translateX(30px);
+    }
+
+    .light .toggle-checkbox:checked + .toggle-label .toggle-ball {
+      background: #f59e0b;
     }
 
     main {
@@ -219,6 +319,7 @@
       padding: 28px;
       border-radius: 20px;
       box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+      margin-top: 100px;
     }
 
     /* Hero */
@@ -249,6 +350,11 @@
       align-items: center;
       justify-content: center;
       font-size: 56px;
+      transition: all 0.3s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
     }
 
     .meta {
@@ -320,12 +426,21 @@
     /* Sections */
     section {
       margin-top: 26px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .card {
       background: var(--card);
       border-radius: var(--radius);
       padding: 18px;
+      transition: all 0.3s ease;
     }
 
     h3 {
@@ -335,7 +450,7 @@
 
     /* About & skills */
     .about {
-      display: flex;
+      display: grid;
       gap: 20px;
       align-items: flex-start;
     }
@@ -363,6 +478,12 @@
       color: var(--muted);
       font-size: 13px;
       font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      background: rgba(124, 58, 237, 0.15);
     }
 
     .skills-grid {
@@ -376,7 +497,7 @@
       background: var(--glass-2);
       padding: 14px;
       border-radius: 12px;
-      display: flex;
+      display: grid;
       gap: 12px;
       align-items: center;
       transition: all 0.2s ease;
@@ -405,7 +526,7 @@
       font-size: 12px;
     }
 
-    /* Projects */
+    /* Projects améliorés */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -434,6 +555,23 @@
       justify-content: center;
       font-weight: 700;
       font-size: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj .preview::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .proj:hover .preview::before {
+      left: 100%;
     }
 
     .proj .info {
@@ -466,6 +604,12 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-1px);
+      background: rgba(124, 58, 237, 0.15);
     }
 
     /* Future */
@@ -585,9 +729,14 @@
       }
 
       header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -599,6 +748,12 @@
       main {
         padding: 16px;
         border-radius: 16px;
+        margin-top: 140px;
+      }
+
+      header {
+        top: 10px;
+        padding: 10px 15px;
       }
 
       .logo {
@@ -608,7 +763,6 @@
       }
 
       nav {
-        width: 100%;
         flex-wrap: wrap;
       }
 
@@ -616,6 +770,7 @@
         flex: 1;
         text-align: center;
         font-size: 14px;
+        padding: 8px 12px;
       }
 
       .photo {
@@ -640,6 +795,10 @@
       .future-list {
         grid-template-columns: 1fr;
       }
+
+      .theme-toggle-container {
+        gap: 8px;
+      }
     }
 
     @media (max-width: 400px) {
@@ -656,13 +815,18 @@
       .skills-grid {
         grid-template-columns: 1fr;
       }
+
+      nav a {
+        font-size: 12px;
+        padding: 6px 8px;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <header>
+    <header id="main-header">
       <div class="brand">
         <div class="logo">OB</div>
         <div>
@@ -671,16 +835,23 @@
         </div>
       </div>
       <nav>
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" class="nav-link">À propos</a>
+        <a href="#skills" class="nav-link">Compétences</a>
+        <a href="#projets" class="nav-link">Projets</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <button id="theme-toggle" class="btn ghost" style="margin-left:18px" aria-label="Changer de thème">🌙</button>
+      <div class="theme-toggle-container">
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-toggle-checkbox" class="toggle-checkbox">
+          <label for="theme-toggle-checkbox" class="toggle-label">
+            <div class="toggle-ball">🌙</div>
+          </label>
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="hero card">
+      <section class="hero card visible">
         <div class="avatar">
           <div class="photo">OB</div>
           <div class="meta">
@@ -925,40 +1096,89 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Gestion du thème clair/sombre
+    // Gestion du thème améliorée
     const root = document.documentElement;
-    const themeBtn = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('theme-toggle-checkbox');
     
     function setTheme(mode) {
       if (mode === 'light') {
         root.classList.add('light');
-        themeBtn.textContent = '☀️';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f8f9fc');
       } else {
         root.classList.remove('light');
-        themeBtn.textContent = '🌙';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0f1724');
       }
       localStorage.setItem('theme', mode);
     }
 
     // Initialisation du thème
-    const userTheme = localStorage.getItem('theme');
-    if (userTheme === 'light') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
+    const userTheme = localStorage.getItem('theme') || 'dark';
+    themeToggle.checked = userTheme === 'light';
+    setTheme(userTheme);
 
-    themeBtn.onclick = () => {
-      setTheme(root.classList.contains('light') ? 'dark' : 'light');
-    };
+    themeToggle.addEventListener('change', () => {
+      setTheme(themeToggle.checked ? 'light' : 'dark');
+    });
 
-    // Navigation fluide
+    // Navigation fluide améliorée
     function scrollToSection(id) {
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerHeight = document.getElementById('main-header').offsetHeight;
+        const offsetTop = el.offsetTop - headerHeight - 20;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       }
     }
+
+    // Navigation active state
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function updateActiveNav() {
+      const scrollY = window.pageYOffset + 100;
+      
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Header scroll effect
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Animation au scroll améliorée
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observer toutes les sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
 
     // Gestion du formulaire de contact
     function submitContact(e) {
@@ -971,9 +1191,6 @@
         message: form.message.value
       };
 
-      // Simulation d'envoi (à remplacer par une vraie API)
-      console.log('Form data:', formData);
-      
       // Créer le lien mailto pour ouvrir le client email
       const mailtoLink = `mailto:octavebahoun@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -991,29 +1208,11 @@
       if (form) form.reset();
     }
 
-    // Animation au scroll (optionnel)
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observer toutes les sections
-    document.querySelectorAll('section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
+    // Initialisation
+    document.addEventListener('DOMContentLoaded', () => {
+      updateActiveNav();
     });
   </script>
 </body>
 
-</html
+</html>
