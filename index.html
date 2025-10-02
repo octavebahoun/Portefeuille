@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de BAHOUN-HOUTOUKPE Octave - Étudiant en Génie Électrique et Informatique spécialisé en développement web, mobile et IA">
   <title>Portfolio — BAHOUN-HOUTOUKPE Octave</title>
   <style>
     /* Reset & base */
     :root {
       --bg: #0f1724;
-      /* bleu nuit */
       --card: #0b1220;
       --muted: #9aa7bf;
       --accent: #7c3aed;
-      /* violet */
       --glass: rgba(255, 255, 255, 0.04);
       --radius: 14px;
       --maxw: 1100px;
@@ -21,20 +20,20 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    /* Mode clair */
+    /* Mode clair amélioré */
     .light {
-      --bg: #f6f8fb;
-      --card: #fff;
-      --muted: #5a6473;
+      --bg: #f8f9fc;
+      --card: #ffffff;
+      --muted: #64748b;
       --accent: #7c3aed;
-      --glass: rgba(0, 0, 0, 0.04);
-      --glass-2: rgba(0, 0, 0, 0.03);
+      --glass: rgba(0, 0, 0, 0.03);
+      --glass-2: rgba(0, 0, 0, 0.02);
       color-scheme: light;
     }
 
     .light body {
-      background: linear-gradient(180deg, var(--bg), #e6eaff 120%);
-      color: #1a2233;
+      background: linear-gradient(180deg, #f8f9fc, #e8ebf9 120%);
+      color: #1e293b;
     }
 
     .light nav a {
@@ -42,33 +41,42 @@
     }
 
     .light nav a:hover {
-      color: #222;
-      background: rgba(0, 0, 0, 0.04);
+      color: #1e293b;
+      background: rgba(124, 58, 237, 0.08);
     }
 
     .light .card {
       background: var(--card);
-      box-shadow: 0 2px 12px rgba(124, 58, 237, 0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(124, 58, 237, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .light .pill {
-      background: var(--glass);
-      color: var(--muted);
+      background: rgba(124, 58, 237, 0.08);
+      color: #7c3aed;
+      font-weight: 500;
     }
 
     .light .tag {
-      background: rgba(0, 0, 0, 0.03);
-      color: var(--muted);
+      background: rgba(124, 58, 237, 0.06);
+      color: #7c3aed;
+      font-weight: 500;
     }
 
     .light .btn {
-      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
       color: #fff;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
     }
 
     .light .btn.ghost {
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      color: var(--muted);
+      background: transparent;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--accent);
+    }
+
+    .light .btn.ghost:hover {
+      background: rgba(124, 58, 237, 0.06);
     }
 
     .light footer {
@@ -77,39 +85,87 @@
 
     .light input,
     .light textarea {
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      color: #1a2233;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.8);
+      color: #1e293b;
+    }
+
+    .light input:focus,
+    .light textarea:focus {
+      border-color: var(--accent);
+      background: #fff;
+    }
+
+    .light .logo {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+    }
+
+    .light .avatar {
+      background: linear-gradient(180deg, #ffffff, #f8f9fc);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .light .photo {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      color: #fff;
+    }
+
+    .light .skill {
+      background: rgba(124, 58, 237, 0.04);
+      border: 1px solid rgba(124, 58, 237, 0.08);
+    }
+
+    .light .proj:hover {
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+    }
+
+    .light .proj .preview {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      color: #fff;
+    }
+
+    .light .future-item {
+      background: linear-gradient(90deg, rgba(124, 58, 237, 0.08), rgba(124, 58, 237, 0.04));
+      border: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    .light .socials a {
+      background: rgba(124, 58, 237, 0.04);
+      border: 1px solid rgba(124, 58, 237, 0.08);
+    }
+
+    .light .socials a:hover {
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--accent);
     }
 
     * {
-      box-sizing: border-box
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html,
     body {
-      height: 100%
+      height: 100%;
     }
 
     body {
-      margin: 0;
       background: linear-gradient(180deg, var(--bg), #061026 120%);
       color: #e6eef8;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;
+      line-height: 1.6;
       padding: 40px 20px;
       display: flex;
       justify-content: center;
     }
 
-    .light body {
-      background: linear-gradient(180deg, var(--bg), #e6eaff 120%);
-      color: #1a2233;
-    }
-
     .wrap {
       width: 100%;
-      max-width: var(--maxw)
+      max-width: var(--maxw);
     }
 
     /* Top nav */
@@ -117,13 +173,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px
+      margin-bottom: 28px;
     }
 
     .brand {
       display: flex;
       gap: 14px;
-      align-items: center
+      align-items: center;
     }
 
     .logo {
@@ -142,35 +198,27 @@
 
     nav {
       display: flex;
-      gap: 12px
+      gap: 12px;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
       padding: 8px 12px;
-      border-radius: 10px
+      border-radius: 10px;
+      transition: all 0.2s ease;
     }
 
     nav a:hover {
       color: #fff;
-      background: rgba(255, 255, 255, 0.03)
-    }
-
-    .light nav a {
-      color: var(--muted);
-    }
-
-    .light nav a:hover {
-      color: #222;
-      background: rgba(0, 0, 0, 0.04);
+      background: rgba(255, 255, 255, 0.06);
     }
 
     main {
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
       padding: 28px;
       border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7)
+      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
     }
 
     /* Hero */
@@ -178,7 +226,7 @@
       display: grid;
       grid-template-columns: 340px 1fr;
       gap: 28px;
-      align-items: center
+      align-items: center;
     }
 
     .avatar {
@@ -200,152 +248,169 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 56px
+      font-size: 56px;
     }
 
     .meta {
       width: 100%;
-      text-align: center
+      text-align: center;
     }
 
     .meta h4 {
       margin: 0;
       font-size: 18px;
-      color: var(--accent)
+      color: var(--accent);
     }
 
     .meta p {
-      margin: 0;
+      margin: 4px 0 0 0;
       color: var(--muted);
-      font-size: 13px
+      font-size: 13px;
     }
 
     .intro h1 {
       font-size: 30px;
-      margin: 0 0 8px 0
+      margin: 0 0 12px 0;
+      line-height: 1.3;
     }
 
     .intro p {
       margin: 0 0 18px 0;
-      color: var(--muted)
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     .cta {
       display: flex;
       gap: 12px;
-      align-items: center
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn {
       background: linear-gradient(90deg, var(--accent), #5b21b6);
       border: none;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border-radius: 12px;
       color: white;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.18)
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.18);
+      transition: all 0.2s ease;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(124, 58, 237, 0.25);
     }
 
     .btn.ghost {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: var(--muted)
-    }
-
-    .light .btn {
-      background: linear-gradient(90deg, var(--accent), #a78bfa);
-      color: #fff;
-    }
-
-    .light .btn.ghost {
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--muted);
+      box-shadow: none;
+    }
+
+    .btn.ghost:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     /* Sections */
     section {
-      margin-top: 26px
+      margin-top: 26px;
     }
 
     .card {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 18px
+      padding: 18px;
     }
 
-    .light .card {
-      background: var(--card);
-      box-shadow: 0 2px 12px rgba(124, 58, 237, 0.04);
+    h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
     }
 
     /* About & skills */
     .about {
       display: flex;
       gap: 20px;
-      align-items: center
+      align-items: flex-start;
     }
 
     .about .bio {
-      flex: 1
+      flex: 1;
+    }
+
+    .about .bio p {
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     .interests {
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
     }
 
     .pill {
       background: var(--glass);
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
       color: var(--muted);
-      font-size: 13px
-    }
-
-    .light .pill {
-      background: var(--glass);
-      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 12px;
-      margin-top: 12px
+      margin-top: 12px;
     }
 
     .skill {
       background: var(--glass-2);
-      padding: 12px;
+      padding: 14px;
       border-radius: 12px;
       display: flex;
-      gap: 10px;
-      align-items: center
+      gap: 12px;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .skill:hover {
+      background: var(--glass);
+      transform: translateY(-2px);
     }
 
     .skill svg {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      color: var(--accent);
     }
 
     .skill strong {
-      display: block
+      display: block;
+      font-size: 14px;
     }
 
     .skill span {
       display: block;
       color: var(--muted);
-      font-size: 13px
+      font-size: 12px;
     }
 
     /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin-top: 12px
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
     }
 
     .proj {
@@ -353,109 +418,156 @@
       border-radius: 12px;
       overflow: hidden;
       cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease
+      transition: all 0.3s ease;
     }
 
     .proj:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6)
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(2, 6, 23, 0.6);
     }
 
     .proj .preview {
-      height: 160px;
+      height: 180px;
       background: linear-gradient(135deg, #071330, #11243a);
       display: flex;
       align-items: center;
-      justify-content: center
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     .proj .info {
-      padding: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent)
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    }
+
+    .proj .info strong {
+      font-size: 16px;
+    }
+
+    .proj .info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0;
+      line-height: 1.5;
     }
 
     .tags {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 8px
+      margin-top: 10px;
     }
 
     .tag {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 6px 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px 10px;
       border-radius: 8px;
       color: var(--muted);
-      font-size: 12px
-    }
-
-    .light .tag {
-      background: rgba(0, 0, 0, 0.03);
-      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
     }
 
     /* Future */
     .future-list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 12px;
-      flex-wrap: wrap
+      margin-top: 12px;
     }
 
     .future-item {
       background: linear-gradient(90deg, rgba(124, 58, 237, 0.12), rgba(41, 25, 69, 0.06));
-      padding: 12px;
+      padding: 16px;
       border-radius: 12px;
-      min-width: 180px
+      transition: all 0.2s ease;
+    }
+
+    .future-item:hover {
+      background: linear-gradient(90deg, rgba(124, 58, 237, 0.18), rgba(41, 25, 69, 0.1));
+      transform: translateY(-2px);
+    }
+
+    .future-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .future-item div {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 340px;
-      gap: 18px
+      gap: 18px;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 10px
+      gap: 12px;
     }
 
     input,
     textarea {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 14px;
       border-radius: 10px;
-      color: inherit
+      color: inherit;
+      font-family: inherit;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
     }
 
     .socials {
       display: flex;
       gap: 10px;
-      flex-direction: column
+      flex-direction: column;
     }
 
     .socials a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px;
+      gap: 10px;
+      padding: 12px 14px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
       text-decoration: none;
-      color: var(--muted)
+      color: var(--muted);
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+
+    .socials a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      transform: translateX(4px);
     }
 
     footer {
-      margin-top: 22px;
+      margin-top: 28px;
       color: var(--muted);
       font-size: 13px;
-      text-align: center
-    }
-
-    .light footer {
-      color: var(--muted);
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     /* Responsive */
@@ -465,170 +577,84 @@
       }
 
       .contact-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        flex-direction: column;
       }
 
       header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px
+        gap: 14px;
       }
     }
 
-    /* Responsive amélioré */
     @media (max-width: 700px) {
       body {
-        padding: 10px;
-      }
-
-      .wrap {
-        max-width: 100vw;
-        padding: 0;
+        padding: 16px 12px;
       }
 
       main {
-        padding: 10px;
-        border-radius: 12px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-
-      .brand {
-        gap: 8px;
+        padding: 16px;
+        border-radius: 16px;
       }
 
       .logo {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
       }
 
       nav {
-        gap: 6px;
+        width: 100%;
+        flex-wrap: wrap;
       }
 
       nav a {
-        padding: 7px 10px;
-        font-size: 15px;
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
       }
 
-      .hero {
+      .photo {
+        width: 160px;
+        height: 160px;
+        font-size: 44px;
+      }
+
+      .intro h1 {
+        font-size: 24px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .projects-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 10px 0;
       }
 
-      .avatar {
-        padding: 10px;
-        gap: 8px;
+      .future-list {
+        grid-template-columns: 1fr;
       }
+    }
 
+    @media (max-width: 400px) {
       .photo {
         width: 120px;
         height: 120px;
         font-size: 36px;
       }
 
-      .meta h4 {
-        font-size: 16px;
-      }
-
-      .meta p {
-        font-size: 14px;
-      }
-
       .intro h1 {
-        font-size: 22px;
-      }
-
-      .intro p {
-        font-size: 15px;
-      }
-
-      .card {
-        padding: 10px;
-        border-radius: 10px;
-      }
-
-      .about {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .proj .preview {
-        height: 90px;
-        font-size: 15px;
-      }
-
-      .future-list {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .future-item {
-        min-width: unset;
-        font-size: 15px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      form input,
-      form textarea {
-        font-size: 15px;
-        padding: 10px;
-      }
-
-      .socials a {
-        font-size: 15px;
-        padding: 7px;
-      }
-
-      footer {
-        font-size: 12px;
-        margin-top: 14px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .photo {
-        width: 80px;
-        height: 80px;
         font-size: 20px;
       }
 
-      .intro h1 {
-        font-size: 16px;
-      }
-
       .skills-grid {
         grid-template-columns: 1fr;
-      }
-
-      .future-item {
-        font-size: 13px;
-        padding: 8px;
-      }
-
-      .card {
-        padding: 6px;
       }
     }
   </style>
@@ -645,10 +671,10 @@
         </div>
       </div>
       <nav>
-        <a href="#projets">Projets</a>
-        <a href="#skills">Compétences</a>
-        <a href="#contact">Contact</a>
         <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
       </nav>
       <button id="theme-toggle" class="btn ghost" style="margin-left:18px" aria-label="Changer de thème">🌙</button>
     </header>
@@ -661,30 +687,23 @@
             <h4>Étudiant & Développeur</h4>
             <p>Dév Web • Mobile • IA • Télécoms</p>
           </div>
-          <div style="width:100%" class="pill">En recherche d'opportunités & collaborations</div>
+          <div style="width:100%" class="pill">Ouvert aux opportunités & collaborations</div>
         </div>
 
         <div class="intro">
           <h1>Salut — je suis Octave<br /><span style="color:var(--accent)">Développeur Web & Mobile</span></h1>
-          <p>🎓 Étudiant en Génie Électrique et Informatique à l’INSTI de Lokossa, je me spécialise en Informatique et
-            Télécommunications. Passionné par la technologie, je développe des compétences à l’intersection de plusieurs
-            domaines :
-
-            💻 Développement logiciel & applications web/mobiles (PHP, MySQL, JavaScript, Laravel, Vue.js).
-
-            🤖 Robotique & Systèmes embarqués (Arduino, ROS – Robot Operating System).
-
-            📊 Data Science & IA appliquée : analyse de performances académiques, recommandations intelligentes,
-            chabots.</p>
+          <p>🎓 Étudiant en Génie Électrique et Informatique à l'INSTI de Lokossa, spécialisé en Informatique et Télécommunications. Passionné par la technologie, je développe des compétences à l'intersection de plusieurs domaines :</p>
+          <p>💻 <strong>Développement logiciel</strong> & applications web/mobile (PHP, MySQL, JavaScript, Laravel, Vue.js)<br>
+          🤖 <strong>Robotique & Systèmes embarqués</strong> (Arduino, ROS)<br>
+          📊 <strong>Data Science & IA appliquée</strong> : analyse de performances académiques, recommandations intelligentes, chatbots</p>
           <div class="cta">
             <button class="btn" onclick="scrollToSection('projets')">Voir mes projets</button>
             <button class="btn ghost" onclick="scrollToSection('contact')">Me contacter</button>
           </div>
 
           <div style="margin-top:18px" class="card">
-            <strong>Résumé rapide</strong>
-            <div style="color:var(--muted);margin-top:8px">PHP · Laravel · Vue.js · React · Flutter · Firebase · MySQL ·
-              Python · Git</div>
+            <strong>Stack technique</strong>
+            <div style="color:var(--muted);margin-top:8px;line-height:1.6">PHP • Laravel • Vue.js • React • Flutter • Firebase • MySQL • Python • Git</div>
           </div>
         </div>
       </section>
@@ -692,17 +711,16 @@
       <section id="about" class="card about">
         <div class="bio">
           <h3>À propos</h3>
-          <p style="color:var(--muted)">Étudiant à l'INSTI (Lokossa). Passionné par l'IA appliquée au campus, les
-            applications mobiles et le dev web. Fan d'anime et de musique metal — j'apporte créativité et persévérance à
-            mes projets.</p>
+          <p>Étudiant à l'INSTI de Lokossa, je suis passionné par l'intersection entre le développement logiciel et l'intelligence artificielle. Mon objectif est de créer des solutions numériques innovantes qui résolvent des problèmes concrets.</p>
+          <p>Je m'intéresse particulièrement à l'application de l'IA dans le contexte éducatif, au développement d'applications mobiles intuitives, et à la création d'expériences web modernes et performantes.</p>
 
-          <div style="margin-top:12px">
-            <div style="font-size:13px;color:var(--muted)">Centres d'intérêt</div>
-            <div class="interests" style="margin-top:8px">
-              <div class="pill">Anime</div>
-              <div class="pill">Musique metal</div>
-              <div class="pill">Dance</div>
-              <div class="pill">IA & Data</div>
+          <div style="margin-top:16px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Centres d'intérêt</div>
+            <div class="interests">
+              <div class="pill">Développement web</div>
+              <div class="pill">IA & Data Science</div>
+              <div class="pill">Applications mobiles</div>
+              <div class="pill">Systèmes embarqués</div>
             </div>
           </div>
         </div>
@@ -710,212 +728,65 @@
         <div>
           <h3 id="skills">Compétences</h3>
           <div class="skills-grid">
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>PHP & Laravel</strong><span>Backend & APIs</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>JavaScript</strong><span>Vue / React / Node</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>Flutter</strong><span>Apps multiplateformes</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>Firebase & PocketBase</strong><span>Auth & BDD temps réel</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2v20" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2v20M4 8h16M4 16h16" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>MySQL</strong><span>Conception BD</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>Python</strong><span>Data & scripts</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 7l9 6 9-6" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
               </svg>
               <div><strong>Git & GitHub</strong><span>Versioning</span></div>
             </div>
-            <div class="skill"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12h20" stroke="currentColor" />
+            <div class="skill">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12h20M12 2l5 5-5 5M12 22l-5-5 5-5" stroke="currentColor" stroke-width="2"/>
               </svg>
-              <div><strong>Telecoms</strong><span>Réseaux & systèmes</span></div>
+              <div><strong>Télécoms</strong><span>Réseaux & systèmes</span></div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="projets">
-        <h3 style="margin-top:18px">Projets</h3>
+        <h3 style="margin-top:18px">Projets réalisés</h3>
         <div class="projects-grid">
-          <article class="proj card"
-            onclick="window.open('https://trading-2cf04.web.app/', '_blank')">
+          <article class="proj card" onclick="window.open('https://trading-2cf04.web.app/', '_blank')">
             <div class="preview">
-              <div style="font-weight:700">Trading formation App</div>
+              <div style="font-weight:700">Trading Formation App</div>
             </div>
             <div class="info">
-              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Trading formation
-                  App</strong><span style="color:var(--muted);font-size:13px">Fullstack</span></div>
-              <p style="color:var(--muted);font-size:13px;margin:8px 0">
-                Un site interractive intuitifs de formations payantes en trading.
-              </p>
-              <div class="tags">
-                <div class="tag">Firebase</div>
-                <div class="tag">Vue.js</div>
-                <div class="tag">API</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="proj card"
-            onclick="window.open('https://app-quiz-758e0.web.app/', '_blank')">
-            <div class="preview">
-              <div style="font-weight:700">Quiz App</div>
-            </div>
-            <div class="info">
-              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Quiz App</strong><span
-                  style="color:var(--muted);font-size:13px">Vue.js</span></div>
-              <p style="color:var(--muted);font-size:13px;margin:8px 0">Application de quiz responsive, modes chrono et
-                score dynamique.</p>
-              <div class="tags">
-                <div class="tag">Vue.js</div>
-                <div class="tag">Firebase</div>
-                <div class="tag">Tailwind</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="proj card"
-            onclick="window.open('')">
-            <div class="preview">
-              <div style="font-weight:700">Pixel Verse</div>
-            </div>
-            <div class="info">
-              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Pixel
-                  Verse</strong><span style="color:var(--muted);font-size:13px">Vue / Laravel</span></div>
-              <p style="color:var(--muted);font-size:13px;margin:8px 0">Une galerie de fond d'ecran intelligente en ligne .</p>
-              <div class="tags">
-                <div class="tag">Vue</div>
-                <div class="tag">Laravel</div>
-                <div class="tag">Auth</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="card">
-        <h3>Futurs projets</h3>
-        <div class="future-list" style="margin-top:8px">
-          <div class="future-item"><strong>Journal Anime</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Écrire et partager tes ressentis sur les
-                épisodes d'anime.</div>
-          </div>
-          <div class="future-item"><strong>IA de recommandations</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Système de suggestions de cours & groupes
-              d'étude.</div>
-          </div>
-          <div class="future-item"><strong>Optimiseur d'emploi du temps</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Prédiction d'affluence & notifications
-              intelligentes.</div>
-          </div>
-          <div class="future-item"><strong>Market place campus</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Matching étudiants-jobs & colocations.</div>
-          </div>
-          <div class="future-item"><strong>Chatbot IA</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Assistant virtuel pour infos campus & FAQ.</div>
-          <div class="future-item"><strong>Smart Campus App</strong>
-            <div style="color:var(--muted);font-size:13px;margin-top:6px">Système académique intelligent — notes, emploi
-                du temps et IA.</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="card" style="margin-top:18px">
-        <h3>Contact</h3>
-        <div class="contact-grid" style="margin-top:10px">
-          <form onsubmit="submitContact(event)">
-            <input required name="name" placeholder="Ton nom" />
-            <input required name="email" placeholder="Ton email" />
-            <input name="subject" placeholder="Sujet" />
-            <textarea name="message" placeholder="Message" rows="5" required></textarea>
-            <div style="display:flex;gap:10px">
-              <button class="btn" type="submit">Envoyer</button>
-              <button type="button" class="btn ghost" onclick="clearForm(this)">Effacer</button>
-            </div>
-          </form>
-          Envoyer un mail 
-
-          <div class="socials">
-            <a href="https://github.com/octavebahoun">🔗 GitHub</a>
-            <a href="https://www.linkedin.com/in/octave-bahoun-b9114b337/">🔗 LinkedIn</a>
-            <a href="mailto:octavebahoun@gmail.com">✉️ Email</a>
-            <a href="#">📱 WhatsApp</a>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div>© <span id="year"></span> Octave BAHOUN — Portfolio interactif</div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Gestion du thème clair/sombre
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('theme-toggle');
-    function setTheme(mode) {
-      if (mode === 'light') {
-        root.classList.add('light');
-        themeBtn.textContent = '☀️';
-      } else {
-        root.classList.remove('light');
-        themeBtn.textContent = '🌙';
-      }
-      localStorage.setItem('theme', mode);
-    }
-    // Initialisation
-    const userTheme = localStorage.getItem('theme');
-    if (userTheme === 'light') setTheme('light');
-    else setTheme('dark');
-    themeBtn.onclick = () => {
-      setTheme(root.classList.contains('light') ? 'dark' : 'light');
-    };
-
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function openProject(title, desc) {
-      // simple modal style alert — remplacer par modal réel si besoin
-      alert(title + "\n\n" + desc);
-    }
-
-    function submitContact(e) {
-      e.preventDefault();
-      const f = e.target;
-      // demo only — ici on peut connecter à un service (formspree, firebase, api)
-      alert('Merci ' + (f.name.value || 'ami') + '! Ton message a été reçu (simulation).');
-      f.reset();
-    }
-
-    function clearForm(btn) {
-      const f = btn.closest('form'); if (f) f.reset();
-    }
-  </script>
-</body>
-
-</html>
+              <div style="display:flex;justify-content:space
