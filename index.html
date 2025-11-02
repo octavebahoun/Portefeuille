@@ -22,6 +22,8 @@
           <li><a href="#skills" class="nav-link">Compétences</a></li>
           <li><a href="#projects" class="nav-link">Projets</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+                          <li><button class="theme-toggle" id="themeToggle" aria-label="Basculer thème" aria-pressed="false"><span aria-hidden="true"></span></button></li>
+                <li><button class="lang-toggle" id="langToggle">EN</button></li>
         </ul>
         <div class="menu-toggle" id="menuToggle">
           <span></span><span></span><span></span>
@@ -50,7 +52,8 @@
         <div class="hero-image">
           <div class="avatar-container">
             <div class="avatar-bg"></div>
-            <div class="avatar">OB</div>
+            <div class="avatar avatar-circle">OB</div>
+            <div class="avatar-rings"></div>
           </div>
         </div>
       </div>
@@ -118,17 +121,17 @@
           <div class="skill-card" style="animation-delay: 0.1s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" clip-rule="evenodd"><path fill="#020202" d="M23.396 11.994c-.18 1.289-.52 3.387-.88 5.385c-.999 5.754-1.129 5.205-1.049 5.135c-.649.44-5.994-.09-7.492-1.18c0 .13-.24-.519.89-6.992c.888-5.145.998-4.645 1.737-4.705c0 .799 0 1.788.63 2.108a9.7 9.7 0 0 0 4.155.919c.56-.25.81-.75 1.579-1.898l.48.21a.342.342 0 1 0 .31-.61c-1.55-.83-7.643-2.497-8.602-1.099c-.96 1.399-2.558 10.989-2.308 12.338a1.64 1.64 0 0 0 .95.999c1.628.829 7.372 1.838 8.47.559c.49-.56 1.649-10.34 1.729-11.059a.305.305 0 1 0-.6-.11m-1.12-1.518c-.28.29-.569.69-.869.999s-.31.2-.499.16l-3.227-.8l-.19-1.228a19.3 19.3 0 0 1 4.786.899zm-7.64-8.881a24 24 0 0 1 2.867 1.998c.52.496.99 1.045 1.398 1.638c1.2 1.739 1 2.319 1.48 2.169a.31.31 0 0 0 .19-.4c-.73-3.106-1.999-4.195-3.627-5.094c-.75-.4-1.578-.79-1.998-1a.378.378 0 0 0-.31.69m-3.447 17.981c-3.576.2-9.69-2.238-9.99-8.092C.818 6.37 5.414.346 11.778.935a.302.302 0 0 0 .07-.599C6.562-.384 2.636 2.574.617 7.57a8.99 8.99 0 0 0 3.587 10.889a12.5 12.5 0 0 0 6.993 1.808a.35.35 0 0 0-.01-.69"/><path fill="#0c6fff" d="M18.001 5.081c-.999 0-2.308-.16-3.766-.28a7.5 7.5 0 0 0-.87-1.927a.3.3 0 0 0-.569.18q.045.83.21 1.648c-4.995-.37-5.105-.06-4.995-.23a6.4 6.4 0 0 1 1.998-2.677c.14-.45-.53-.48-1.129 0a7.5 7.5 0 0 0-1.988 2.767q-1.145.018-2.277.19c-.9.15-.74.849-.07.819a16 16 0 0 1 1.998 0a19.8 19.8 0 0 0-.79 4.296c-1.178 0-2.367-.08-3.366-.11s-.91.55-.12.799q1.681.306 3.387.44c-.056 1.239.065 2.48.36 3.686c-.78-.07-1.59-.09-2.748-.21c-.949.21-.33.859.58.999c3.766.889 1.918-.36 3.186 1.858q.264.457.58.879c.5.59 1.138.82.999 0a7.3 7.3 0 0 1-1.23-2.258c1.443.072 2.889.042 4.327-.09a.34.34 0 0 0 0-.679c-1.529 0-3.097-.22-4.626-.38a14.2 14.2 0 0 1-.3-3.716c2.358.1 3.377 0 5.465-.06a.35.35 0 0 0 0-.689c-1.718-.1-3.397-.26-5.425-.39c.108-1.457.349-2.902.72-4.315l5.784.16c.15.35.32.699.47 1.059a.341.341 0 1 0 .659-.18c0-.29-.07-.58-.1-.87h3.576a.361.361 0 0 0 .07-.719"/></g></svg></div>
             <h3>Développement Web</h3>
-            <p>PHP, Laravel, Vue.js, HTML/CSS, JavaScript</p>
+            <p>PHP, Laravel, Vue.js, React, HTML/CSS, JavaScript</p>
           </div>
           <div class="skill-card" style="animation-delay: 0.2s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21V3zm5-15q.425 0 .713-.288T13 5t-.288-.712T12 4t-.712.288T11 5t.288.713T12 6M7 23q-.825 0-1.412-.587T5 21V3q0-.825.588-1.412T7 1h10q.825 0 1.413.588T19 3v3.1q.45.175.725.55T20 7.5v2q0 .475-.275.85T19 10.9V12q0 .425-.288.713T18 13t-.712-.288T17 12V3H7v18h1q.425 0 .713.288T9 22t-.288.713T8 23zm6.825-4l1.475 1.475q.275.275.275.688t-.275.712q-.3.3-.712.3t-.713-.3L11.7 19.7q-.3-.3-.3-.7t.3-.7l2.2-2.2q.3-.3.7-.288t.7.313q.275.3.287.7t-.287.7zm6.35 0L18.7 17.525q-.275-.275-.275-.687t.275-.713q.3-.3.713-.3t.712.3L22.3 18.3q.3.3.3.7t-.3.7l-2.2 2.2q-.3.3-.7.288t-.7-.313q-.275-.3-.288-.7t.288-.7z"/></svg></div>
             <h3>Applications Mobile</h3>
-            <p>Flutter, Firebase</p>
+            <p>Flutter, React Native, Firebase, API RESTful</p>
           </div>
           <div class="skill-card" style="animation-delay: 0.3s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg"  color="#e23cb4" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M44.0001 11C44.0001 11 44 36.0623 44 38C44 41.3137 35.0457 44 24 44C12.9543 44 4.00003 41.3137 4.00003 38C4.00003 36.1423 4 11 4 11"/><path d="M44 29C44 32.3137 35.0457 35 24 35C12.9543 35 4 32.3137 4 29"/><path d="M44 20C44 23.3137 35.0457 26 24 26C12.9543 26 4 23.3137 4 20"/><ellipse cx="24" cy="10" fill="#2f88ff" rx="20" ry="6"/></g></svg></div>
             <h3>Base de Données</h3>
-            <p>MySQL, Firebase</p>
+            <p>MySQL, PostgreSQL, Firebase, PocketBase</p>
           </div>
           <div class="skill-card" style="animation-delay: 0.4s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><g fill="none"><path fill="url(#SVGhmPsEd2e)" d="M8.003 4.07C8.55 3.994 9 4.449 9 5v6h6c.552 0 1.008.45.93.997A7.001 7.001 0 0 1 2 11a7 7 0 0 1 6.003-6.93"/><path fill="url(#SVGGYhtFdci)" d="M17.062 10c.498 0 .927-.366.937-.864L18 9a7 7 0 0 0-7.136-6.999c-.498.01-.864.44-.864.937V9a1 1 0 0 0 1 1z"/><defs><linearGradient id="SVGhmPsEd2e" x1="15.938" x2="-6.363" y1="18" y2="-4.301" gradientUnits="userSpaceOnUse"><stop stop-color="#6d37cd"/><stop offset=".641" stop-color="#ea71ef"/></linearGradient><linearGradient id="SVGGYhtFdci" x1="17.333" x2="11.6" y1="8.533" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#e23cb4"/><stop offset="1" stop-color="#ea71ef"/></linearGradient></defs></g></svg></div>
@@ -138,12 +141,12 @@
           <div class="skill-card" style="animation-delay: 0.5s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 13v9H3v-9Zm18 0v2h-2v7h-2v-7h-2v-2Zm-11-2a7.54 7.54 0 0 1 3.96 1.149l1.447-1.45A9.5 9.5 0 0 0 12 9a9.36 9.36 0 0 0-5.333 1.68l1.449 1.453A7.36 7.36 0 0 1 12 11"/><path fill="currentColor" d="M12 7a11.5 11.5 0 0 1 6.834 2.27l1.427-1.43A13.48 13.48 0 0 0 12 5a13.33 13.33 0 0 0-8.186 2.822l1.426 1.43A11.34 11.34 0 0 1 12 7"/><path fill="currentColor" d="M12 3a15.47 15.47 0 0 1 9.687 3.41l1.427-1.429A17.43 17.43 0 0 0 .96 4.964l1.427 1.429A15.33 15.33 0 0 1 12 3m0 10a4.5 4.5 0 1 0 4.5 4.5A4.5 4.5 0 0 0 12 13m0 7a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 20"/></svg></div>
             <h3>IoT & Embarqué</h3>
-            <p>Arduino, ROS</p>
+            <p>Arduino, ROS, Robotique, Capteurs</p>
           </div>
           <div class="skill-card" style="animation-delay: 0.6s">
             <div class="skill-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6.25A3.25 3.25 0 0 1 6.25 3h11.5A3.25 3.25 0 0 1 21 6.25v5.658a1.4 1.4 0 0 0-.988-.791a5 5 0 0 0-.512-.085V8.5h-15v9.25c0 .966.784 1.75 1.75 1.75h5.676l-.186.186A2.5 2.5 0 0 0 11.044 21H6.25A3.25 3.25 0 0 1 3 17.75zm12.994 5.683L14.28 10.22a.75.75 0 1 0-1.06 1.06l1.691 1.692a5.1 5.1 0 0 1 1.083-1.04M4.5 7h15v-.75a1.75 1.75 0 0 0-1.75-1.75H6.25A1.75 1.75 0 0 0 4.5 6.25zm6.28 4.28a.75.75 0 1 0-1.06-1.06l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-2.47-2.47zm9.019.814c.353.077.44.507.185.762l-1.905 1.904a1.527 1.527 0 0 0 2.16 2.16l1.905-1.904c.255-.255.685-.168.762.185a4.075 4.075 0 0 1-5.57 4.622l-2.729 2.73a1.527 1.527 0 0 1-2.16-2.16l2.73-2.73a4.074 4.074 0 0 1 4.622-5.57"/></svg></div>
             <h3>Outils & DevOps</h3>
-            <p>Git, GitHub, VS Code</p>
+            <p>Git, GitHub, VS Code, Agile</p>
           </div>
         </div>
       </div>
@@ -396,7 +399,38 @@
   </g>
 </svg></div>
     <script>
-       // Update year
+      // Theme: apply saved preference or system preference (runs immediately)
+      (function() {
+        try {
+          const saved = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = saved || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          // ignore storage errors
+        }
+      })();
+
+      // Helper to update the theme toggle button (uses SVG icons)
+      function updateThemeToggleButton() {
+        const btn = document.getElementById('themeToggle');
+        if (!btn) return;
+        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const moonSVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
+        const sunSVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path stroke="currentColor" stroke-width="2" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none"/></svg>';
+        btn.innerHTML = theme === 'dark' ? moonSVG : sunSVG;
+        btn.setAttribute('aria-pressed', theme === 'dark');
+      }
+
+      function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        updateThemeToggleButton();
+      }
+
+      // Update year
       document.getElementById('year').textContent=new Date().getFullYear();
 
       // Mobile menu toggle
@@ -652,6 +686,15 @@
       // Initialize
       document.addEventListener('DOMContentLoaded', ()=> {
           updateActiveLink();
+          // Theme toggle setup
+          const themeBtn = document.getElementById('themeToggle');
+          if (themeBtn) {
+            themeBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              toggleTheme();
+            });
+          }
+          updateThemeToggleButton();
 
           // Add hover effect to project cards
           document.querySelectorAll('.project-card').forEach(card=> {
