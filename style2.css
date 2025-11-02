@@ -732,7 +732,7 @@
 
       /* Light theme overrides */
       [data-theme="light"] {
-        --bg-primary: #ffffff;
+        --bg-primary:linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
         --bg-secondary: #f8f9fa;
         --text-primary: #2c3e50;
         --text-secondary: #5a6c7d;
@@ -753,7 +753,7 @@
 
       /* Light theme specific adjustments */
       [data-theme="light"] nav {
-        background: rgba(255, 255, 255, 0.95);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
         border-bottom: 1px solid var(--border);
       }
 
@@ -796,7 +796,8 @@
 
       [data-theme="light"] .skill-card,
       [data-theme="light"] .project-card {
-        background: var(--bg-secondary);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
+
         border: 1px solid var(--border);
         box-shadow: 0 2px 8px var(--shadow);
       }
@@ -815,7 +816,8 @@
 
       [data-theme="light"] .form-group input,
       [data-theme="light"] .form-group textarea {
-        background: var(--bg-secondary);
+       background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
+
         border: 1px solid var(--border);
         color: var(--text-primary);
       }
@@ -826,14 +828,16 @@
       }
 
       [data-theme="light"] .contact-item {
-        background: var(--bg-secondary);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
+
         border: 1px solid var(--border);
         color: var(--text-primary);
         box-shadow: 0 2px 8px var(--shadow);
       }
 
       [data-theme="light"] footer {
-        background: var(--bg-secondary);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
+
         border-top: 1px solid var(--border);
       }
 
@@ -861,7 +865,9 @@
       }
 
       [data-theme="light"] .nav-links {
-        background: rgba(255, 255, 255, 0.98);
+        background: linear-gradient(to bottom right, rgba(241, 238, 238, 0.7), rgba(224, 223, 223, 0.5));
+;
+
       }
 
       [data-theme="light"] .theme-toggle,
