@@ -1,137 +1,589 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV Octave</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - BAHOUN-HOUTOUKPE Octave</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- En-tête rouge -->
-  <header>
-    <h1>BAHOUN-HOUTOUKPE Octave Précieux Mahunan</h1>
-    <p> 18 ans</p>
-    <p>Etudiant</p>
-  </header>
-
-  <div class="container">
-    <!-- Sidebar bleu nuit -->
-    <aside class="sidebar">
-      <div class="ecart">
-        <h2>ADRESSE</h2>
-        <p>Contact : +229 01 47 79 70 82</p>
-        <p>Email : octavebahoun@gmail.com</p>
-        <p>Portfolio: <a href="https://octavebahoun.github.io/Portefeuille">Visitez mon portfolio</a></p>
-        <p>Résidence : Lokossa </p>
-      </div>
-
-      <div class="ecart">
-        <h2>COMPETENCES SOCIALES</h2>
-        <ul>
-          <li>Sens de la communication</li>
-          <li>Adaptabilité</li>
-          <li>Autonomie</li>
-          <li>Esprit d’équipe</li>
-        </ul>
-      </div>
-
-      <div class="ecart">
-        <h2>Langues</h2>
-        <ul>
-          <li>Français : Bien</li>
-          <li>Anglais : Assez-Bien</li>
-          <li>Fon : Bien</li>
-        </ul>
-      </div>
-
-      <div class="ecart">
-        <h2>Centres d’intérêt</h2>
-        <ul>
-          <li>Développement Web et informatique </li>
-          <li>Culture japonaise et animes</li>
-          <li>Musique métal</li>
-          <li>Lecture </li>
-        </ul>
-      </div>
-
-      <div class="ecart">
-        <h2>Liens connexes</h2>
-        <ul>
-          <li>
-            <p> <span style="color: black;">Github:</span> <a
-                href="https://github.com/octavebahoun">https://github.com/octavebahoun</a></p>
-          </li>
-          <li>
-            <p> <span style="color: black;">LinkedIn:</span> <a
-                href="https://www.linkedin.com/in/octave-bahoun-b9114b337">Visitez moi sur linkedin</a></p>
-          </li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Contenu principal -->
-    <main class="main-content">
-      <h2>Profil</h2>
-      <p>
-        Moi Octave BAHOUN-HOUTOUKPE suis étudiant en Informatique et Télécommunications à l'INSTI de Lokossa, passionné
-        d'innovation web et par la technologie du numeriques. Autonome, curieux et motivé, je souhaite
-        intégrer un environnement technique stimulant pour mettre en pratique mes compétences et apprendre
-        davantage.Dotée d’une grande curiosité intellectuelle je suis
-        toujours à l’affût des nouvelles tendances informatiques. Ma capacité
-        à travailler en équipe, mon dynamisme et mon esprit analytique efficace me rende utile
-        pour tout projet.
-      </p>
-
-      <h2>Formation</h2>
-
-      <ul>
-        <li> L2 Génie électrique et informatique / informatique et télécommunication
-          <div class="opa"> UNSTIM - INSTI LOKOSSA /2025-2026 </div>
-        </li>
-        <li> L1 Génie électrique et informatique / informatique et télécommunication
-          <div class="opa"> UNSTIM - INSTI LOKOSSA /2024-2025 </div>
-        </li>
-        <li> Terminale scientifique /2023-2024
-          <div class="opa"> CEG Segbeya</div>
-        </li>
-        <li> Première et Seconde scientifique /2022-2023
-          <div class="opa"> CEG Segbeya</div>
-        </li>
-      </ul>
-
-      <h2>Diplômes</h2>
-      <ul>
-        <li>Stage académique 1Mois
-          <div class="opa">Bénin Digital (haie-vive)</div>
-        </li>
-        <li> Baccalauréat Série C
-          <div class="opa"> CEG Segbeya</div>
-        </li>
-        <li> Brevet d’Etude du Premier Cycle
-          <div class="opa"> CEG Segbeya</div>
-      </ul>
-      <h2>COMPETENCES INFORMATIQUES</h2>
-      <ul>
-        <li>Pack Office </li>
-        <div class="progress-bar">
-          <div class="progress" style="width: 60%;"></div>
+  <div class="cv-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-content">
+        <div class="photo-container" onclick="document.getElementById('photoInput').click()">
+          <div class="photo-placeholder" id="photoPlaceholder">
+            <div class="icon">📷</div>
+            <div class="text">Ajouter<br>une photo</div>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" style="display: none;">
         </div>
-        <li>Dev Frontend : JavaScript,Vuejs,Tailwind,</li>
-        <div class="progress-bar">
-          <div class="progress" style="width: 60%;"></div>
+        <div class="header-info">
+          <h1>Octave BAHOUN-HOUTOUKPE</h1>
+          <div class="title">Développeur Full Stack | Étudiant en Génie Électrique & Informatique</div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="icon">📧</span>
+              <span>octavebahoun@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📱</span>
+              <span>+229 01 47 79 70 82</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📍</span>
+              <span>Cotonou, Bénin</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">🔗</span>
+              <span>GitHub: @octavebahoun</span>
+            </div>
+          </div>
         </div>
-        <li>Dev mobile: Flutter (Débutant)</li>
-        <li>Dev Backend : php (Intermédiaire),Flask & Laravel (bases)</li>
-        <div class="progress-bar">
-          <div class="progress" style="width: 40%;"></div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Profil -->
+      <div class="section">
+        <h2 class="section-title">💼 Profil Professionnel</h2>
+        <p class="profile-text">
+          Étudiant passionné en Informatique et Télécommunications à l'INSTI de Lokossa, je me spécialise dans le développement web et mobile avec un fort intérêt pour l'intelligence artificielle. Doté d'une grande curiosité intellectuelle, je suis constamment à l'affût des nouvelles tendances technologiques. Autonome, dynamique et analytique, je cherche à intégrer un environnement technique stimulant pour mettre en pratique mes compétences, contribuer à des projets innovants et continuer mon apprentissage. Ma capacité à travailler en équipe et mon esprit d'innovation font de moi un atout pour tout projet ambitieux.
+        </p>
+      </div>
+
+      <!-- Formation -->
+      <div class="section">
+        <h2 class="section-title">🎓 Formation Académique</h2>
+        <div class="timeline-item">
+          <h3>Licence 2 - Génie Électrique et Informatique</h3>
+          <div class="institution">UNSTIM - INSTI Lokossa</div>
+          <div class="date">Spécialité : Informatique et Télécommunications | 2025-2026</div>
         </div>
-        <li>Outils : VS Code, Canva ,Laravel Herd, Cursor,Git</li>
-        <li>Systèmes : Windows , Linux , Termux</li>
-      </ul>
-    </main>
+        <div class="timeline-item">
+          <h3>Licence 1 - Génie Électrique et Informatique</h3>
+          <div class="institution">UNSTIM - INSTI Lokossa</div>
+          <div class="date">Spécialité : Informatique et Télécommunications | 2024-2025</div>
+        </div>
+        <div class="timeline-item">
+          <h3>Baccalauréat Série C</h3>
+          <div class="institution">CEG Segbeya</div>
+          <div class="date">2023-2024</div>
+        </div>
+        <div class="timeline-item">
+          <h3>BEPC - Brevet d'Études du Premier Cycle</h3>
+          <div class="institution">CEG Segbeya</div>
+          <div class="date">2022</div>
+        </div>
+      </div>
+
+      <!-- Expérience -->
+      <div class="section">
+        <h2 class="section-title">💼 Expérience Professionnelle</h2>
+        <div class="timeline-item">
+          <h3>Stage Académique en Développement Web</h3>
+          <div class="institution">Bénin Digital (Haie-Vive)</div>
+          <div class="date">1 mois | 2024</div>
+          <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--gray);">
+            <li>Développement d'applications web avec WordPress</li>
+            <li>Collaboration en équipe sur des projets réels</li>
+            <li>Apprentissage des bonnes pratiques de développement</li>
+            <li>Debuggage et optimisation de code</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Compétences Techniques -->
+      <div class="section">
+        <h2 class="section-title">🛠️ Compétences Techniques</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><span class="icon">🎨</span> Frontend</h4>
+            <div class="skill-list">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Vue.js</span>
+              <span class="skill-tag">HTML5/CSS3</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><span class="icon">⚙️</span> Backend</h4>
+            <div class="skill-list">
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Python</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><span class="icon">📱</span> Mobile</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">Firebase</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><span class="icon">🗄️</span> Base de Données</h4>
+            <div class="skill-list">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Firebase</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><span class="icon">🔧</span> Outils & Environnements</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Git/GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Cursor</span>
+              <span class="skill-tag">Laravel Herd</span>
+              <span class="skill-tag">Canva</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><span class="icon">💻</span> Systèmes</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Windows</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Termux</span>
+              <span class="skill-tag">Pack Office</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projets Réalisés -->
+      <div class="section">
+        <h2 class="section-title">🚀 Projets Réalisés</h2>
+        <div class="projects-grid">
+          <div class="project-card" onclick="window.open('https://trading-2cf04.web.app/', '_blank')">
+            <h4>Trading Formation App</h4>
+            <p>Plateforme e-learning complète avec système de paiement intégré, gestion de cours et suivi des apprenants.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Payment API</span>
+            </div>
+          </div>
+          <div class="project-card" onclick="window.open('https://app-quiz-758e0.web.app/', '_blank')">
+            <h4>Quiz App Interactive</h4>
+            <p>Application de quiz dynamique avec mode chronométré, système de scoring et statistiques détaillées.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Tailwind</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h4>Pixel Verse Gallery</h4>
+            <p>Galerie de wallpapers avec recherche intelligente, système de favoris et gestion de collections personnalisées.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h4>Smart Campus System</h4>
+            <p>Système académique intelligent avec IA pour la gestion des notes, emplois du temps et recommandations personnalisées.</p>
+            <div class="project-tags">
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">ML</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Langues & Centres d'intérêt -->
+      <div class="section">
+        <h2 class="section-title">🌍 Langues & Compétences Transversales</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="icon">🇫🇷</span>
+            <span class="text">Français - Courant</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">🇬🇧</span>
+            <span class="text">Anglais - Intermédiaire</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">👥</span>
+            <span class="text">Travail en équipe</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">💡</span>
+            <span class="text">Résolution de problèmes</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">📚</span>
+            <span class="text">Apprentissage continu</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">⚡</span>
+            <span class="text">Adaptabilité</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centres d'intérêt -->
+      <div class="section">
+        <h2 class="section-title">🎯 Centres d'Intérêt</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="icon">🤖</span>
+            <span class="text">Intelligence Artificielle</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">📱</span>
+            <span class="text">Applications mobiles</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">⚡</span>
+            <span class="text">IoT & Robotique</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">📊</span>
+            <span class="text">Data Science</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">🎨</span>
+            <span class="text">UI/UX Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>💼 Ouvert aux opportunités de stage, projets collaboratifs et missions freelance</p>
+      <div class="social-links">
+        <a href="https://github.com/octavebahoun" target="_blank" class="social-link" title="GitHub">💻</a>
+        <a href="https://www.linkedin.com/in/octave-bahoun-b9114b337/" target="_blank" class="social-link" title="LinkedIn">💼</a>
+        <a href="mailto:octavebahoun@gmail.com" class="social-link" title="Email">📧</a>
+        <a href="https://wa.me/2290147797082" target="_blank" class="social-link" title="WhatsApp">💬</a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 Octave BAHOUN-HOUTOUKPE - Tous droits réservés</p>
+    </div>
   </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button class="action-btn" onclick="window.print()" title="Imprimer le CV">🖨️</button>
+    <button class="action-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Retour en haut">⬆️</button>
+  </div>
+
+  <script>
+    // Handle photo upload
+    const photoInput = document.getElementById('photoInput');
+    const photoContainer = document.querySelector('.photo-container');
+    const photoPlaceholder = document.getElementById('photoPlaceholder');
+
+    photoInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          // Remove placeholder
+          photoPlaceholder.style.display = 'none';
+          
+          // Create and add image
+          const img = document.createElement('img');
+          img.src = event.target.result;
+          photoContainer.appendChild(img);
+          
+          // Store in localStorage
+          localStorage.setItem('cvPhoto', event.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Load saved photo on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedPhoto = localStorage.getItem('cvPhoto');
+      if (savedPhoto) {
+        photoPlaceholder.style.display = 'none';
+        const img = document.createElement('img');
+        img.src = savedPhoto;
+        photoContainer.appendChild(img);
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Add hover animations to cards
+    document.querySelectorAll('.project-card, .skill-category, .info-item').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s ease';
+      });
+    });
+
+    // Print optimization
+    window.addEventListener('beforeprint', () => {
+      document.body.style.background = 'white';
+    });
+
+    window.addEventListener('afterprint', () => {
+      document.body.style.background = 'var(--light-gray)';
+    });
+
+    // Add ripple effect on buttons
+    document.querySelectorAll('.action-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s ease-out';
+        ripple.style.pointerEvents = 'none';
+        
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Dynamic year update
+    const currentYear = new Date().getFullYear();
+    document.querySelectorAll('.footer p').forEach(p => {
+      if (p.textContent.includes('2024')) {
+        p.textContent = p.textContent.replace('2024', currentYear);
+      }
+    });
+
+    // Smooth scroll reveal effect
+    const revealElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease';
+      revealObserver.observe(el);
+    });
+
+    // Add download CV functionality (optional)
+    function downloadCV() {
+      window.print();
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Ctrl/Cmd + P to print
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        window.print();
+      }
+      // Escape to scroll to top
+      if (e.key === 'Escape') {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    });
+
+    // Add click to copy email
+    const emailElements = document.querySelectorAll('.contact-item');
+    emailElements.forEach(item => {
+      if (item.textContent.includes('octavebahoun@gmail.com')) {
+        item.style.cursor = 'pointer';
+        item.title = 'Cliquer pour copier';
+        item.addEventListener('click', () => {
+          navigator.clipboard.writeText('octavebahoun@gmail.com').then(() => {
+            const originalText = item.innerHTML;
+            item.innerHTML = '<span class="icon">✅</span><span>Email copié !</span>';
+            setTimeout(() => {
+              item.innerHTML = originalText;
+            }, 2000);
+          });
+        });
+      }
+    });
+
+    // Progress bar on scroll
+    const progressBar = document.createElement('div');
+    progressBar.style.position = 'fixed';
+    progressBar.style.top = '0';
+    progressBar.style.left = '0';
+    progressBar.style.height = '3px';
+    progressBar.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
+    progressBar.style.width = '0%';
+    progressBar.style.zIndex = '9999';
+    progressBar.style.transition = 'width 0.1s ease';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.querySelector('.cv-container').style.opacity = '0';
+      setTimeout(() => {
+        document.querySelector('.cv-container').style.transition = 'opacity 0.8s ease';
+        document.querySelector('.cv-container').style.opacity = '1';
+      }, 100);
+    });
+
+    // Highlight active section in view
+    const sections = document.querySelectorAll('.section');
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.background = 'linear-gradient(135deg, rgba(99, 102, 241, 0.02), transparent)';
+          entry.target.style.borderRadius = '10px';
+          entry.target.style.padding = '1rem';
+          entry.target.style.transition = 'all 0.5s ease';
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    console.log('✨ CV chargé avec succès ! Made with ❤️ by Octave BAHOUN-HOUTOUKPE');
+  </script>
+
+  <style>
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Additional hover effects */
+    .timeline-item {
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      padding-left: 2.5rem;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.05), transparent);
+      border-radius: 10px;
+      margin-left: -0.5rem;
+      padding-right: 0.5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Tooltip styles */
+    [title] {
+      position: relative;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-gray);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Selection color */
+    ::selection {
+      background: var(--primary);
+      color: white;
+    }
+
+    ::-moz-selection {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Focus styles for accessibility */
+    *:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Print page breaks */
+    @media print {
+      .section {
+        page-break-inside: avoid;
+      }
+
+      .project-card,
+      .skill-category {
+        page-break-inside: avoid;
+      }
+
+      h2 {
+        page-break-after: avoid;
+      }
+    }
+  </style>
 </body>
 </html>
