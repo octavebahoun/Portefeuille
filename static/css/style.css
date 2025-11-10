@@ -23,13 +23,249 @@
         --shadow: rgba(0,0,0,0.3);
       }
 
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        overflow-x: hidden;
-        line-height: 1.6;
-      }
+      /* ========================================
+   CORRECTIONS FOOTER ET CTA POSITIONNEMENT
+   ======================================== */
+
+/* 1. STRUCTURE BODY POUR FOOTER STICKY */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content prend tout l'espace disponible */
+main {
+  flex: 1;
+}
+
+/* 2. FOOTER STICKY EN BAS */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--dark-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto; /* Pousse le footer en bas */
+  width: 100%;
+}
+
+footer p {
+  color: var(--gray);
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* 3. SECTION CONTACT - MEILLEUR ESPACEMENT */
+#contact {
+  padding: 5rem 2rem 3rem 2rem; /* Réduit le padding bottom */
+}
+
+/* 4. CARTES CTA (GitHub, LinkedIn) - STYLE AMÉLIORÉ */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Réduit de 2rem à 1.5rem */
+  margin-bottom: 2rem; /* Ajoute espace avant le footer */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--dark-light);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de brillance au hover */
+.contact-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-item:hover::before {
+  left: 100%;
+}
+
+.contact-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0; /* Empêche l'icône de rétrécir */
+}
+
+.contact-item div {
+  flex: 1;
+}
+
+.contact-item h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-item p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* 5. LIENS DU FOOTER */
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* 6. CORRECTION SCROLL TO TOP BUTTON */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* ========================================
+   MODE LIGHT - CORRECTIONS
+   ======================================== */
+
+[data-theme="light"] footer {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] footer p {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] footer a {
+  color: var(--accent);
+}
+
+[data-theme="light"] footer a:hover {
+  color: var(--accent-hover);
+}
+
+[data-theme="light"] .contact-item {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.6));
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+[data-theme="light"] .contact-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(52, 152, 219, 0.2);
+  transform: translateY(-5px);
+}
+
+[data-theme="light"] .contact-item p {
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-info {
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    padding: 1.2rem;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .contact-item h4 {
+    font-size: 1rem;
+  }
+  
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+  
+  .scroll-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+}
 
       /* Smooth theme transitions to avoid flash */
       html, body {
