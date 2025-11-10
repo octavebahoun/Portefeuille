@@ -1,0 +1,42 @@
+# robots.txt pour Portfolio Octave BAHOUN-HOUTOUKPE
+# https://octavebahoun.github.io/Portefeuille/
+
+# Autoriser tous les robots d'indexation
+User-agent: *
+Allow: /
+
+# Bloquer l'accès aux fichiers système et techniques
+Disallow: /static/js/
+Disallow: /static/css/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Autoriser l'accès aux images pour Google Images
+Allow: /static/image/
+Allow: /static/video/
+
+# Sitemap
+Sitemap: https://octavebahoun.github.io/Portefeuille/sitemap.xml
+
+# Robots spécifiques
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /static/image/
+
+User-agent: Bingbot
+Allow: /
+
+# Bloquer les mauvais bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Temps d'attente entre les requêtes (en secondes)
+Crawl-delay: 1

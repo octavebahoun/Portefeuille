@@ -548,6 +548,7 @@
       /* Footer */
       footer {
         text-align: center;
+        display: block;
         padding: 2rem;
         background: var(--dark-light);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
