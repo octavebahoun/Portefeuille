@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Portfolio</title>
+  <link rel="stylesheet" href="https://octavebahoun.github.io/Portefeuille/static/css/style.css">
+  <link rel="stylesheet" href="blog.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="blog.js" defer></script>
+</head>
+<body>
+  <div class="blog-container">
+    <!-- Vue Liste -->
+    <div id="listView">
+      <div class="blog-header">
+        <h1 class="gradient-text">📝 Blog</h1>
+        <p style="color: var(--gray); font-size: 1.1rem;">Découvrez mes articles et tutoriels</p>
+      </div>
+
+      <!-- Recherche -->
+      <div class="search-section">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Rechercher un article...">
+        </div>
+
+        <!-- Filtres par tags -->
+        <div class="tags-filter" id="tagsFilter">
+          <button class="tag-filter active" data-tag="all">Tous</button>
+        </div>
+      </div>
+
+      <!-- Grille d'articles -->
+      <div class="posts-grid" id="postsGrid"></div>
+
+      <div class="no-results" id="noResults" style="display: none;">
+        Aucun article trouvé
+      </div>
+    </div>
+
+    <!-- Vue Article -->
+    <div id="articleView" class="article-view">
+      <a href="#" class="back-button" id="backButton">
+        ← Retour aux articles
+      </a>
+
+      <article id="articleContent">
+        <!-- Contenu dynamique -->
+      </article>
+
+      <!-- Navigation -->
+      <nav class="article-navigation" id="articleNav"></nav>
+
+      <!-- Publicités -->
+      <aside class="ads-section">
+        <h3 class="ads-title">💡 Suggestions</h3>
+        <div class="ads-grid" id="adsGrid"></div>
+      </aside>
+    </div>
+  </div>
+
+
+</body>
+</html>

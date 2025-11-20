@@ -1,0 +1,10 @@
+[
+  {
+    "id": 2,
+    "title": "Guide complet de React pour débutants",
+    "date": "2025-01-10",
+    "cover": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "tags": ["React", "JavaScript", "Frontend"],
+    "content": "# Guide complet de React\n\nReact est une bibliothèque JavaScript puissante..."
+  }
+]
