@@ -1,10 +1,10 @@
 [
   {
-    "id": 2,
-    "title": "Guide complet de React pour débutants",
-    "date": "2025-01-10",
+    "id": 3,
+    "title": "Projets de réaliqtion d'affichage dynamique avec matrice de LED",
+    "date": "2025-12-01",
     "cover": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
-    "tags": ["React", "JavaScript", "Frontend"],
-    "content": "# Guide complet de React\n\nReact est une bibliothèque JavaScript puissante..."
+    "tags": ["Arduino", "JavaScript", "Frontend"],
+    "content": "#L’affichage dynamique constitue aujourd’hui un moyen essentiel pour diffuser rapidement des informations ou des messages personnalisés. Avec le développement des technologies IoT, il devient possible de contrôler ce type d’affichage à distance et en temps réel. Le projet ESP32 Matrix Manager s’inscrit dans cette dynamique et s’insère dans le cadre du Thème 3 : Programmation de deux matrices de LED 8*8 MAX7219 pour un message défilant   présentant de département de GEI.La problématique centrale du thème est la suivante : comment programmer et contrôler efficacement un affichage LED défilant mettant en valeur le département GEI."
   }
 ]
