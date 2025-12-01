@@ -1,4 +1,4 @@
-//petit script node js pour les posts
+//petit script node js pour les post
 
 
 
@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Chemin vers le JSON
-const postsPath = path.join(__dirname, 'static/json/posts.json');
+const postPath = path.join(__dirname, 'blog/post.json');
 
 // Nouvel article à ajouter
 const newPost = {
@@ -15,29 +15,29 @@ const newPost = {
   date: new Date().toISOString().split('T')[0], 
   cover: "image",
   tags: ["Tag1", "Tag2"],
-  content: "contenu des posts"
+  content: "contenu des post"
 };
 
 // Lecture du fichier existant
-fs.readFile(postsPath, 'utf8', (err, data) => {
+fs.readFile(postPath, 'utf8', (err, data) => {
   if (err) return console.error("Erreur lecture JSON:", err);
 
-  let posts;
+  let post;
   try {
-    posts = JSON.parse(data);
+    post = JSON.parse(data);
   } catch (e) {
     return console.error("Erreur parsing JSON:", e);
   }
 
   // Définir un nouvel ID
-  const maxId = posts.reduce((max, post) => Math.max(max, post.id), 0);
+  const maxId = post.reduce((max, post) => Math.max(max, post.id), 0);
   newPost.id = maxId + 1;
 
   // Ajouter le nouvel article
-  posts.push(newPost);
+  post.push(newPost);
 
   // Sauvegarder
-  fs.writeFile(postsPath, JSON.stringify(posts, null, 2), 'utf8', (err) => {
+  fs.writeFile(postPath, JSON.stringify(post, null, 2), 'utf8', (err) => {
     if (err) return console.error("Erreur écriture JSON:", err);
     console.log(`Article ajouté avec succès ! ID: ${newPost.id}`);
   });
