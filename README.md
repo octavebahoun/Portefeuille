@@ -44,4 +44,8 @@ Projects - Grille de projets cliquables
 Contact - Formulaire + liens sociaux
 Footer - Informations finales
 
+## Section Blog
+
+Dans mob blog a présent j'ajoute mes decouvertes et réalisation mineur
+
 Le design est moderne, professionnel et visuellement attrayant avec des animations subtiles qui créent une expérience utilisateur engageante ! 🚀Réessayer
