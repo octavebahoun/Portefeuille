@@ -3,8 +3,8 @@
     "id": 3,
     "title": "Projets de réaliqtion d'affichage dynamique avec matrice de LED",
     "date": "2025-12-01",
-    "cover": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "cover": "https://images.unsplash.com/photo-1581032091114-48586dc7c6b0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "tags": ["Arduino", "JavaScript", "Frontend"],
-    "content": "#L’affichage dynamique constitue aujourd’hui un moyen essentiel pour diffuser rapidement des informations ou des messages personnalisés. Avec le développement des technologies IoT, il devient possible de contrôler ce type d’affichage à distance et en temps réel. Le projet ESP32 Matrix Manager s’inscrit dans cette dynamique et s’insère dans le cadre du Thème 3 : Programmation de deux matrices de LED 8*8 MAX7219 pour un message défilant   présentant de département de GEI.La problématique centrale du thème est la suivante : comment programmer et contrôler efficacement un affichage LED défilant mettant en valeur le département GEI."
+    "content": "#L’affichage dynamique constitue aujourd’hui un moyen essentiel pour diffuser rapidement des informations ou des messages personnalisés. Avec le développement des technologies IoT, il devient possible de contrôler ce type d’affichage à distance et en temps réel. Le projet ESP32 Matrix Manager s’inscrit dans cette dynamique et s’insère dans le cadre du Thème 3 : Programmation de deux matrices de LED 8*8 MAX7219 pour un message défilant présentant de département de GEI. La problématique centrale du thème est la suivante : comment programmer et contrôler efficacement un affichage LED défilant mettant en valeur le département GEI."
   }
 ]

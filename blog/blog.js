@@ -1,6 +1,6 @@
 // ======= État de l'application =======
 let POSTS = [];
-let ADS = [];
+//let ADS = [];
 let currentView = 'list';
 let currentArticleId = null;
 let filteredPosts = [];
@@ -10,18 +10,18 @@ let selectedTag = 'all';
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Charger les articles depuis JSON
-    const postsResponse = await fetch('post.json');
+    const postsResponse = await fetch('/blog/post.json');
     POSTS = await postsResponse.json();
     POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
     filteredPosts = [...POSTS];
 
     // Charger les publicités depuis JSON
-    const adsResponse = await fetch('ads.json');
-    ADS = await adsResponse.json();
+    //const adsResponse = await fetch('/blog/ads.json');
+    //ADS = await adsResponse.json();
 
     generateTags();
     filterPosts();
-    renderAds();
+    //renderAds();
 
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', filterPosts);
@@ -191,6 +191,7 @@ function createNavLink(post, cls, text) {
 }
 
 // ======= Affichage publicités =======
+/*
 function renderAds() {
   const adsGrid = document.getElementById('adsGrid');
   adsGrid.innerHTML = '';
@@ -206,7 +207,7 @@ function renderAds() {
     adsGrid.appendChild(adCard);
   });
 }
-
+*/
 // ======= Utilitaires =======
 function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
