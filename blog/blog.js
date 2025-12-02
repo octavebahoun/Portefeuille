@@ -10,7 +10,7 @@ let selectedTag = 'all';
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Charger les articles depuis JSON
-    const postsResponse = await fetch('/blog/post.json');
+    const postsResponse = await fetch('https://octavebahoun.github.io/Portefeuille/blog/post.json');
     POSTS = await postsResponse.json();
     POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
     filteredPosts = [...POSTS];
