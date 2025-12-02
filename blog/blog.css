@@ -253,7 +253,7 @@
 
     .nav-article {
       flex: 1;
-      padding: 1.5rem;
+      padding: 1rem;
       background: var(--dark-light);
       border-radius: 15px;
       border: 1px solid var(--border);
@@ -269,11 +269,15 @@
       border-color: var(--primary);
       transform: translateY(-5px);
     }
-
-    .nav-article.next {
-      justify-content: flex-end;
-      text-align: right;
-      display: inline;
+    .nav-article next {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
     }
 
     /* Publicités */
