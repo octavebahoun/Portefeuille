@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Projets de réaliqtion d'affichage dynamique avec matrice de LED",
     "date": "2025-12-01",
-    "cover": "../static/images/led.jpeg",
+    "cover": "../static/image/led.jpeg",
     "tags": [
       "Arduino",
       "JavaScript",
