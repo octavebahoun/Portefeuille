@@ -273,6 +273,7 @@
     .nav-article.next {
       justify-content: flex-end;
       text-align: right;
+      display: block;
     }
 
     /* Publicités */
