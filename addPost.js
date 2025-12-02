@@ -31,7 +31,7 @@ fs.readFile(postPath, 'utf8', (err, data) => {
 
   // Définir un nouvel ID
   const maxId = post.reduce((max, post) => Math.max(max, post.id), 0);
-  newPost.id = maxId + 1;
+  newPost.id = maxId + 0;
 
   // Ajouter le nouvel article
   post.push(newPost);

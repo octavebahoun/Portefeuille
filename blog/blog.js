@@ -1,6 +1,5 @@
 // ======= État de l'application =======
 let POSTS = [];
-//let ADS = [];
 let currentView = 'list';
 let currentArticleId = null;
 let filteredPosts = [];
@@ -12,16 +11,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Charger les articles depuis JSON
     const postsResponse = await fetch('https://octavebahoun.github.io/Portefeuille/blog/post.json');
     POSTS = await postsResponse.json();
+    
+    // Assigner des identifiants uniques basés sur l'index si nécessaire
+    POSTS.forEach((post, index) => {
+      if (post.id === undefined || post.id === null) {
+        post.id = index;
+      }
+    });
+    
     POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
     filteredPosts = [...POSTS];
 
-    // Charger les publicités depuis JSON
-    //const adsResponse = await fetch('/blog/ads.json');
-    //ADS = await adsResponse.json();
-
     generateTags();
     filterPosts();
-    //renderAds();
 
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', filterPosts);
@@ -42,10 +44,9 @@ function generateTags() {
   POSTS.forEach(post => post.tags.forEach(tag => allTags.add(tag)));
 
   const tagsFilter = document.getElementById('tagsFilter');
-  // Bouton "Tous" déjà dans HTML
-  POSTS.forEach(post => post.tags.forEach(tag => {
-    if (!allTags.has(tag)) return;
-    allTags.delete(tag); // pour éviter doublons
+  
+  // Créer un bouton pour chaque tag unique
+  Array.from(allTags).forEach(tag => {
     const button = document.createElement('button');
     button.className = 'tag-filter';
     button.textContent = tag;
@@ -56,7 +57,7 @@ function generateTags() {
       filterPosts();
     });
     tagsFilter.appendChild(button);
-  }));
+  });
 }
 
 // Mettre à jour l'état visuel des tags
@@ -102,7 +103,12 @@ function renderPosts() {
 function createPostCard(post) {
   const card = document.createElement('article');
   card.className = 'post-card';
-  card.onclick = () => showArticleView(post.id);
+  
+  // Utiliser directement post.id qui est maintenant garanti d'exister
+  card.onclick = () => {
+    console.log('Clic sur article avec ID:', post.id, 'Titre:', post.title);
+    showArticleView(post.id);
+  };
 
   const excerpt = post.content.split('\n').find(line => line.length > 50 && !line.startsWith('#')) 
                   || 'Cliquez pour lire la suite...';
@@ -121,8 +127,18 @@ function createPostCard(post) {
 
 // ======= Affichage article individuel =======
 function showArticleView(postId) {
-  const post = POSTS.find(p => p.id === postId);
-  if (!post) return;
+  // Recherche flexible : par ID ou par index
+  let post = POSTS.find(p => p.id === postId || p.id == postId);
+  
+  // Si pas trouvé, essayer par index
+  if (!post && typeof postId === 'number') {
+    post = POSTS[postId];
+  }
+  
+  if (!post) {
+    console.error('Article non trouvé:', postId);
+    return;
+  }
 
   currentArticleId = postId;
   currentView = 'article';
@@ -148,6 +164,12 @@ function showListView() {
 
 function renderArticle(post) {
   const content = document.getElementById('articleContent');
+  
+  // Vérifier si marked.js est disponible
+  const parsedContent = typeof marked !== 'undefined' && marked.parse 
+    ? marked.parse(post.content) 
+    : post.content.replace(/\n/g, '<br>');
+  
   content.innerHTML = `
     <div class="article-header">
       <img src="${post.cover}" alt="${post.title}" class="article-cover">
@@ -155,7 +177,7 @@ function renderArticle(post) {
       <div class="post-meta">📅 <time>${formatDate(post.date)}</time></div>
       <div class="post-tags">${post.tags.map(tag => `<span class="tag">🏷️ ${tag}</span>`).join('')}</div>
     </div>
-    <div class="article-body">${marked.parse(post.content)}</div>
+    <div class="article-body">${parsedContent}</div>
   `;
 }
 
@@ -169,13 +191,17 @@ function renderArticleNavigation(currentId) {
   if (currentIndex > 0) {
     const prevPost = POSTS[currentIndex - 1];
     nav.appendChild(createNavLink(prevPost, 'prev', '← Article précédent'));
-  } else nav.appendChild(document.createElement('div'));
+  } else {
+    nav.appendChild(document.createElement('div'));
+  }
 
   // Article suivant
   if (currentIndex < POSTS.length - 1) {
     const nextPost = POSTS[currentIndex + 1];
     nav.appendChild(createNavLink(nextPost, 'next', 'Article suivant →'));
-  } else nav.appendChild(document.createElement('div'));
+  } else {
+    nav.appendChild(document.createElement('div'));
+  }
 }
 
 function createNavLink(post, cls, text) {
@@ -190,24 +216,6 @@ function createNavLink(post, cls, text) {
   return link;
 }
 
-// ======= Affichage publicités =======
-/*
-function renderAds() {
-  const adsGrid = document.getElementById('adsGrid');
-  adsGrid.innerHTML = '';
-
-  ADS.forEach(ad => {
-    const adCard = document.createElement('a');
-    adCard.href = ad.url;
-    adCard.className = 'ad-card';
-    adCard.innerHTML = `
-      <img src="${ad.image}" alt="${ad.text}" class="ad-image" loading="lazy">
-      <div class="ad-text">${ad.text}</div>
-    `;
-    adsGrid.appendChild(adCard);
-  });
-}
-*/
 // ======= Utilitaires =======
 function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -225,4 +233,3 @@ window.addEventListener('popstate', (e) => {
   if (e.state && e.state.postId) showArticleView(e.state.postId);
   else showListView();
 });
-
