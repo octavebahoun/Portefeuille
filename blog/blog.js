@@ -169,13 +169,13 @@ function renderArticleNavigation(currentId) {
   if (currentIndex > 0) {
     const prevPost = POSTS[currentIndex - 1];
     nav.appendChild(createNavLink(prevPost, 'prev', '← Article précédent'));
-  } else nav.appendChild(document.createElement('button'));
+  } else nav.appendChild(document.createElement('div'));
 
   // Article suivant
   if (currentIndex < POSTS.length - 1) {
     const nextPost = POSTS[currentIndex + 1];
     nav.appendChild(createNavLink(nextPost, 'next', 'Article suivant →'));
-  } else nav.appendChild(document.createElement('button'));
+  } else nav.appendChild(document.createElement('div'));
 }
 
 function createNavLink(post, cls, text) {
